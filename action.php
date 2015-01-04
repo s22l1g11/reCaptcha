@@ -7,7 +7,8 @@
   <body>
   <?php
     print_r($_POST);
-    echo '<br />';
+    echo '<br />verify</br>';
+    echo file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=[secret_key]&response=".$_POST['g-recaptcha-response']."&remoteip=".$_SERVER['REMOTE_ADDR']);
   ?>
   </body>
 </html>
